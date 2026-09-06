@@ -31,7 +31,7 @@ export default function OccasionPathways() {
                   src={service.heroImage}
                   alt={service.heroHeadline}
                   category={service.galleryCategory}
-                  className="absolute inset-0"
+                  fill
                   imgClassName="transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/25 to-obsidian/10" />

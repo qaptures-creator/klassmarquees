@@ -10,6 +10,19 @@ interface EditorialImageProps {
   category?: GalleryCategory | "hero" | "process";
   priority?: boolean;
   sizes?: string;
+  /**
+   * true: absolutely fills a positioned parent that already defines the
+   * size (e.g. inset-0 inside a relatively-positioned, fixed-height
+   * section). false (default): sits relative and fills via h-full/w-full,
+   * for parents that size themselves (e.g. an aspect-ratio box).
+   *
+   * Deliberately a boolean prop rather than a raw className — passing
+   * "absolute inset-0" through className would collide with this
+   * component's own position class and silently collapse to zero height,
+   * since Tailwind resolves conflicting utilities by stylesheet order, not
+   * by className order.
+   */
+  fill?: boolean;
   className?: string;
   imgClassName?: string;
 }
@@ -25,13 +38,20 @@ export default function EditorialImage({
   category = "interiors",
   priority = false,
   sizes = "100vw",
+  fill = false,
   className,
   imgClassName,
 }: EditorialImageProps) {
   const exists = mediaExists(src);
 
   return (
-    <div className={cn("relative overflow-hidden bg-obsidian-2", className)}>
+    <div
+      className={cn(
+        fill ? "absolute inset-0" : "relative h-full w-full",
+        "overflow-hidden bg-obsidian-2",
+        className,
+      )}
+    >
       {exists ? (
         <Image
           src={src}
@@ -42,7 +62,7 @@ export default function EditorialImage({
           className={cn("object-cover", imgClassName)}
         />
       ) : (
-        <Placeholder category={category} label={alt} />
+        <Placeholder category={category} label={alt} seed={src} />
       )}
     </div>
   );

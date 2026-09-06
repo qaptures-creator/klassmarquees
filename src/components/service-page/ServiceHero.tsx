@@ -13,7 +13,7 @@ export default function ServiceHero({ content }: { content: ServicePageContent }
         alt={content.heroHeadline}
         category={content.galleryCategory}
         priority
-        className="absolute inset-0"
+        fill
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/35 to-obsidian/10" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-obsidian/55 via-transparent to-transparent" />

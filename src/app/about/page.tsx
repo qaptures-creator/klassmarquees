@@ -42,7 +42,7 @@ export default function AboutPage() {
           alt="Klass Marquees team finishing the interior of a marquee ahead of an event"
           category="interiors"
           priority
-          className="absolute inset-0"
+          fill
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/10" />
         <Container className="relative z-10 pb-20 pt-40">

@@ -84,7 +84,7 @@ export default function GalleryClient({
                   alt={image.alt}
                   category={image.category}
                   exists={image.exists}
-                  className="absolute inset-0"
+                  fill
                   imgClassName="transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
                   priority={i < 3}
                 />
