@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local visual QA tooling (not part of the shipped site)
+/_qa-*.mjs
