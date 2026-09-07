@@ -1,11 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { navLinks, primaryPhone, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
+
+function subscribeNoop() {
+  return () => {};
+}
+function getClientSnapshot() {
+  return true;
+}
+function getServerSnapshot() {
+  return false;
+}
 
 export default function MobileMenu({
   open,
@@ -20,11 +30,10 @@ export default function MobileMenu({
   // itself position:fixed with its own z-index and so forms a stacking
   // context) — nesting one fixed, full-viewport overlay inside another
   // is a well-known source of stacking/compositing bugs across browsers.
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useSyncExternalStore (rather than a mount-effect + setState) is the
+  // React-blessed way to read the client/server boundary without a
+  // synchronous setState-in-effect.
+  const mounted = useSyncExternalStore(subscribeNoop, getClientSnapshot, getServerSnapshot);
 
   useEffect(() => {
     if (open) closeRef.current?.focus();
