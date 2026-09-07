@@ -7,7 +7,7 @@ import type { ServicePageContent } from "@/types";
 
 export default function ServiceHero({ content }: { content: ServicePageContent }) {
   return (
-    <section className="relative flex h-[85vh] min-h-[34rem] w-full items-end overflow-hidden bg-obsidian text-ivory">
+    <section className="relative flex h-[85vh] min-h-[34rem] w-full items-end overflow-hidden bg-navy text-ivory">
       <EditorialImage
         src={content.heroImage}
         alt={content.heroHeadline}
@@ -15,12 +15,12 @@ export default function ServiceHero({ content }: { content: ServicePageContent }
         priority
         fill
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/35 to-obsidian/10" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-obsidian/55 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/35 to-navy/10" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/55 via-transparent to-transparent" />
 
       <Container className="relative z-10 pb-20 pt-40">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-bronze-light">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent-light">
             {content.eyebrow}
           </p>
         </Reveal>
@@ -37,7 +37,7 @@ export default function ServiceHero({ content }: { content: ServicePageContent }
             <Button href="/contact">Plan Your Event</Button>
             <a
               href={`tel:${primaryPhone.tel}`}
-              className="text-sm font-semibold uppercase tracking-[0.12em] text-ivory/80 transition-colors hover:text-bronze-light"
+              className="text-sm font-semibold uppercase tracking-[0.12em] text-ivory/80 transition-colors hover:text-accent-light"
             >
               Call {primaryPhone.display}
             </a>

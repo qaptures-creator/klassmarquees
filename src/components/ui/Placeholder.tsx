@@ -3,13 +3,13 @@ import type { GalleryCategory } from "@/types";
 type PlaceholderCategory = GalleryCategory | "hero" | "process";
 
 const CATEGORY_STOPS: Record<PlaceholderCategory, [string, string]> = {
-  hero: ["#16150f", "#0b0b0a"],
-  weddings: ["#ebe4d5", "#b9b1a5"],
-  "private-events": ["#1c1a15", "#0b0b0a"],
-  corporate: ["#b9b1a5", "#ebe4d5"],
-  interiors: ["#b59a63", "#16150f"],
-  "night-events": ["#16150f", "#0b0b0a"],
-  process: ["#ebe4d5", "#d3bd8d"],
+  hero: ["#0b243a", "#04111f"],
+  weddings: ["#12354f", "#0b243a"],
+  "private-events": ["#071a2d", "#04111f"],
+  corporate: ["#0b243a", "#12354f"],
+  interiors: ["#1c4c6d", "#071a2d"],
+  "night-events": ["#04111f", "#071a2d"],
+  process: ["#12354f", "#0b243a"],
 };
 
 // Small deterministic hash so repeated placeholders in a dense grid (e.g.
@@ -67,7 +67,7 @@ export default function Placeholder({
           <path
             d="M140 300 L200 190 L260 300 M170 300 L200 245 L230 300"
             fill="none"
-            stroke="#b59a63"
+            stroke="#9cbed3"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"

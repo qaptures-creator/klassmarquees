@@ -6,7 +6,7 @@ import { signatureCapabilities } from "@/config/process";
 
 export default function Capabilities() {
   return (
-    <section className="bg-obsidian py-24 text-ivory sm:py-28 lg:py-32">
+    <section className="bg-navy py-24 text-ivory sm:py-28 lg:py-32">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
@@ -14,7 +14,6 @@ export default function Capabilities() {
               eyebrow="Signature Capabilities"
               heading="Every layer of the space, in one hand."
               description="Structure, interior, lighting and furniture are designed together — so nothing feels bolted on."
-              tone="light"
               className="lg:sticky lg:top-32"
             />
           </div>
@@ -24,7 +23,7 @@ export default function Capabilities() {
                 <li key={cap.title}>
                   <Reveal delay={i * 0.06}>
                     <div className="flex flex-col gap-4 py-8 sm:flex-row sm:items-start sm:gap-8">
-                      <div className="text-bronze">
+                      <div className="text-accent">
                         <CapabilityIcon name={cap.icon} />
                       </div>
                       <div>

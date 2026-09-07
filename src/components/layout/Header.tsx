@@ -44,19 +44,16 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-500 ease-out",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out",
         solid
-          ? "bg-ivory/95 shadow-[0_1px_0_0_rgba(11,11,10,0.08)] backdrop-blur-md"
-          : "bg-gradient-to-b from-obsidian/55 via-obsidian/10 to-transparent",
+          ? "border-b border-ivory/10 bg-navy-deep/85 shadow-[0_1px_0_0_rgba(4,17,31,0.4)] backdrop-blur-md"
+          : "border-b border-transparent bg-gradient-to-b from-navy/60 via-navy/15 to-transparent",
       )}
     >
       <div className="mx-auto flex h-[5.5rem] max-w-[90rem] items-center justify-between px-6 sm:px-8 lg:px-12">
         <Link
           href="/"
-          className={cn(
-            "font-serif text-lg font-semibold tracking-[0.1em] transition-colors duration-500 sm:text-xl",
-            solid ? "text-ink" : "text-ivory",
-          )}
+          className="font-serif text-lg font-semibold tracking-[0.1em] text-ivory transition-colors duration-500 sm:text-xl"
         >
           KLASS MARQUEES
         </Link>
@@ -68,11 +65,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 "text-[0.8rem] font-semibold uppercase tracking-[0.1em] transition-colors duration-300",
-                pathname === link.href
-                  ? "text-bronze"
-                  : solid
-                    ? "text-ink/75 hover:text-bronze"
-                    : "text-ivory/90 hover:text-bronze-light",
+                pathname === link.href ? "text-accent-light" : "text-ivory/85 hover:text-accent-light",
               )}
             >
               {link.label}
@@ -83,14 +76,11 @@ export default function Header() {
         <div className="hidden items-center gap-6 xl:flex">
           <a
             href={`tel:${primaryPhone.tel}`}
-            className={cn(
-              "text-[0.8rem] font-semibold tracking-wide transition-colors duration-300",
-              solid ? "text-ink/75 hover:text-bronze" : "text-ivory/90 hover:text-bronze-light",
-            )}
+            className="text-[0.8rem] font-semibold tracking-wide text-ivory/85 transition-colors duration-300 hover:text-accent-light"
           >
             {primaryPhone.display}
           </a>
-          <Button href="/contact" variant={solid ? "primary" : "onDark"} showArrow={false} className="!px-6 !py-3">
+          <Button href="/contact" showArrow={false} className="!px-6 !py-3">
             Plan Your Event
           </Button>
         </div>
@@ -101,10 +91,7 @@ export default function Header() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
-          className={cn(
-            "relative flex h-11 w-11 shrink-0 items-center justify-center xl:hidden",
-            solid ? "text-ink" : "text-ivory",
-          )}
+          className="relative flex h-11 w-11 shrink-0 items-center justify-center text-ivory xl:hidden"
         >
           <span className="relative block h-3 w-6">
             <span

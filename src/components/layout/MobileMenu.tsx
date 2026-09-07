@@ -63,7 +63,7 @@ export default function MobileMenu({
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
-          className="fixed inset-0 z-[55] flex flex-col bg-obsidian text-ivory lg:hidden"
+          className="fixed inset-0 z-[55] flex flex-col bg-navy text-ivory lg:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -97,7 +97,7 @@ export default function MobileMenu({
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="block py-3 font-serif text-4xl font-medium text-ivory transition-colors hover:text-bronze-light"
+                  className="block py-3 font-serif text-4xl font-medium text-ivory transition-colors hover:text-accent-light"
                 >
                   {link.label}
                 </Link>
@@ -110,14 +110,14 @@ export default function MobileMenu({
               Plan Your Event
             </Button>
             <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-ivory/70">
-              <a href={`tel:${primaryPhone.tel}`} className="hover:text-bronze-light">
+              <a href={`tel:${primaryPhone.tel}`} className="hover:text-accent-light">
                 {primaryPhone.display}
               </a>
               <a
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-bronze-light"
+                className="hover:text-accent-light"
               >
                 Instagram
               </a>

@@ -3,9 +3,9 @@ import Button from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <section className="flex min-h-[80vh] flex-col items-center justify-center bg-obsidian px-6 py-32 text-center text-ivory">
+    <section className="flex min-h-[80vh] flex-col items-center justify-center bg-navy px-6 py-32 text-center text-ivory">
       <Container className="max-w-xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-bronze-light">404</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent-light">404</p>
         <h1 className="mt-6 text-display font-serif font-medium text-balance">
           This page has been struck.
         </h1>

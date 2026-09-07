@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Brand palette */
-  --color-obsidian: #0b0b0a;
-  --color-obsidian-2: #16150f;
-  --color-ivory: #f3efe7;
-  --color-ivory-2: #ebe4d5;
-  --color-stone: #b9b1a5;
-  --color-bronze: #b59a63;
-  --color-bronze-light: #d3bd8d;
+  /* Brand palette — deep, rich navy system */
+  --color-navy: #04111f;
+  --color-navy-deep: #071a2d;
+  --color-elevated: #0b243a;
+  --color-accent: #507a9a;
+  --color-accent-deep: #3f6582;
+  --color-accent-light: #9cbed3;
+  --color-ivory: #f5f2eb;
+  --color-muted: #b5bec8;
   --color-paper: #ffffff;
-  --color-ink: #15140f;
 
   /* Typography — display serif (headings) / sans (body & UI) */
   --font-serif: var(--font-cormorant), "Cormorant Garamond", ui-serif, Georgia, serif;
@@ -37,20 +37,20 @@ html {
 }
 
 body {
-  background: var(--color-ivory);
-  color: var(--color-ink);
+  background: var(--color-navy);
+  color: var(--color-ivory);
   font-feature-settings: "ss01" 1;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-bronze);
-  color: var(--color-obsidian);
+  background: var(--color-accent);
+  color: var(--color-navy);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-bronze);
+  outline: 2px solid var(--color-accent-light);
   outline-offset: 3px;
   border-radius: 1px;
 }
@@ -61,12 +61,12 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-ivory);
+  background: var(--color-navy);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-stone);
+  background: var(--color-elevated);
   border-radius: 999px;
-  border: 2px solid var(--color-ivory);
+  border: 2px solid var(--color-navy);
 }
 
 @keyframes heroZoom {
@@ -75,6 +75,21 @@ body {
   }
   to {
     transform: scale(1.08);
+  }
+}
+
+/* Slow, drifting highlight sweep for the hero — time-based (not
+   scroll-linked) so it reads as ambient atmosphere rather than a scroll
+   effect. Gated behind motion-safe: at each call site. */
+@keyframes heroLightShift {
+  0%,
+  100% {
+    transform: translate(-6%, -4%) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(6%, 4%) scale(1.15);
+    opacity: 0.7;
   }
 }
 
@@ -116,13 +131,13 @@ body {
 
 /* Fixed, whole-viewport film grain. Static (no animation) so it never
    fights reduced-motion prefs, and mix-blend-mode keeps it from muddying
-   contrast on either dark or light sections. */
+   contrast against the navy backdrop. */
 .grain-overlay {
   position: fixed;
   inset: 0;
-  z-index: 60;
+  z-index: 5;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.045;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   background-size: 180px 180px;

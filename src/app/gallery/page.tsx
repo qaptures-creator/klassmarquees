@@ -25,10 +25,10 @@ export default async function GalleryPage({
 
   return (
     <>
-      <section className="flex min-h-[26rem] flex-col justify-end bg-obsidian px-6 pb-16 pt-40 text-ivory sm:px-8 lg:px-12">
+      <section className="flex min-h-[26rem] flex-col justify-end bg-navy px-6 pb-16 pt-40 text-ivory sm:px-8 lg:px-12">
         <Container>
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-bronze-light">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent-light">
               Gallery
             </p>
           </Reveal>
@@ -48,7 +48,7 @@ export default async function GalleryPage({
         </Container>
       </section>
 
-      <section className="bg-ivory py-16 sm:py-20">
+      <section className="bg-navy-deep py-16 sm:py-20">
         <Container>
           <GalleryClient images={imagesWithExistence} initialCategory={params.category ?? "all"} />
         </Container>

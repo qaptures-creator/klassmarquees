@@ -11,10 +11,10 @@ export default function EnquiryCTA({
   description?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-obsidian py-24 text-ivory sm:py-32">
+    <section className="relative overflow-hidden bg-navy py-24 text-ivory sm:py-32">
       <div className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-bronze/20 blur-[120px]" />
-        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-bronze/10 blur-[120px]" />
+        <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-accent/20 blur-[120px]" />
+        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" />
       </div>
       <Container className="relative z-10 max-w-3xl text-center">
         <Reveal variant="mask">
@@ -28,7 +28,7 @@ export default function EnquiryCTA({
             <Button href="/contact">Plan Your Event</Button>
             <a
               href={`tel:${primaryPhone.tel}`}
-              className="text-sm font-semibold uppercase tracking-[0.12em] text-ivory/80 transition-colors hover:text-bronze-light"
+              className="text-sm font-semibold uppercase tracking-[0.12em] text-ivory/80 transition-colors hover:text-accent-light"
             >
               Or call {primaryPhone.display}
             </a>

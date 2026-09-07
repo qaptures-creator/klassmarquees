@@ -4,7 +4,7 @@ import ServiceIntro from "@/components/service-page/ServiceIntro";
 import ServiceOptionsList from "@/components/service-page/ServiceOptionsList";
 import ServiceGalleryPreview from "@/components/service-page/ServiceGalleryPreview";
 import ServicePlanning from "@/components/service-page/ServicePlanning";
-import ImageBreak from "@/components/home/ImageBreak";
+import ServiceStickyStory from "@/components/service-page/ServiceStickyStory";
 import EnquiryCTA from "@/components/home/EnquiryCTA";
 import FAQSection from "@/components/shared/FAQSection";
 import { getServicePage } from "@/config/services";
@@ -23,11 +23,7 @@ export default function PrivateEventsPage() {
       <ServiceIntro content={content} />
       <ServiceOptionsList content={content} />
       <ServiceGalleryPreview category="private-events" heading="Recent private celebrations." />
-      <ImageBreak
-        quote="A garden, transformed for one extraordinary evening."
-        src="/images/services/private-events-break.jpg"
-        category="private-events"
-      />
+      <ServiceStickyStory content={content} />
       <ServicePlanning content={content} />
       <FAQSection faqs={content.faqs} eyebrow="Private Event FAQs" heading="Common questions about private celebrations." />
       <EnquiryCTA heading={content.ctaHeadline} />

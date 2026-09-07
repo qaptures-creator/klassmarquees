@@ -4,7 +4,7 @@ import ServiceIntro from "@/components/service-page/ServiceIntro";
 import ServiceOptionsList from "@/components/service-page/ServiceOptionsList";
 import ServiceGalleryPreview from "@/components/service-page/ServiceGalleryPreview";
 import ServicePlanning from "@/components/service-page/ServicePlanning";
-import ImageBreak from "@/components/home/ImageBreak";
+import ServiceStickyStory from "@/components/service-page/ServiceStickyStory";
 import EnquiryCTA from "@/components/home/EnquiryCTA";
 import FAQSection from "@/components/shared/FAQSection";
 import { getServicePage } from "@/config/services";
@@ -23,11 +23,7 @@ export default function WeddingsPage() {
       <ServiceIntro content={content} />
       <ServiceGalleryPreview category="weddings" heading="Recent wedding marquees." />
       <ServiceOptionsList content={content} />
-      <ImageBreak
-        quote="The room should feel like it was always meant for this day."
-        src="/images/services/weddings-break.jpg"
-        category="weddings"
-      />
+      <ServiceStickyStory content={content} />
       <ServicePlanning content={content} />
       <FAQSection faqs={content.faqs} eyebrow="Wedding FAQs" heading="Common questions about wedding marquees." />
       <EnquiryCTA heading={content.ctaHeadline} />

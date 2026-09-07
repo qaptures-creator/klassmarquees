@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="flex min-h-[24rem] flex-col justify-end bg-obsidian px-6 pb-16 pt-40 text-ivory sm:px-8 lg:px-12">
+      <section className="flex min-h-[24rem] flex-col justify-end bg-navy px-6 pb-16 pt-40 text-ivory sm:px-8 lg:px-12">
         <Container>
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-bronze-light">Contact</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent-light">Contact</p>
           </Reveal>
           <Reveal delay={0.1} variant="mask">
             <h1 className="mt-6 max-w-2xl text-display font-serif font-medium text-balance">
@@ -33,7 +33,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-ivory py-20 sm:py-24 lg:py-28">
+      <section className="bg-navy-deep py-20 sm:py-24 lg:py-28">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-4">
@@ -43,13 +43,13 @@ export default function ContactPage() {
               <div className="mt-8 space-y-6">
                 {phoneLines.map((line) => (
                   <Reveal key={line.tel} delay={0.05}>
-                    <div className="border-b border-ink/10 pb-6">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">
+                    <div className="border-b border-ivory/10 pb-6">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                         {line.label}
                       </p>
                       <a
                         href={`tel:${line.tel}`}
-                        className="mt-2 block font-serif text-2xl text-ink transition-colors hover:text-bronze"
+                        className="mt-2 block font-serif text-2xl text-ivory transition-colors hover:text-accent"
                       >
                         {line.display}
                       </a>
@@ -59,17 +59,17 @@ export default function ContactPage() {
               </div>
               <Reveal delay={0.2}>
                 <div className="mt-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">Follow Along</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Follow Along</p>
                   <a
                     href={siteConfig.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-block font-serif text-2xl text-ink transition-colors hover:text-bronze"
+                    className="mt-2 inline-block font-serif text-2xl text-ivory transition-colors hover:text-accent"
                   >
                     {siteConfig.instagramHandle}
                   </a>
                 </div>
-                <p className="mt-8 text-sm leading-relaxed text-ink/60">
+                <p className="mt-8 text-sm leading-relaxed text-ivory/60">
                   {siteConfig.location.city}, {siteConfig.location.region}
                   <br />
                   United Kingdom

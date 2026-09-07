@@ -15,10 +15,10 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0b0b0a",
+          backgroundColor: "#04111f",
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(181,154,99,0.25), transparent 45%), radial-gradient(circle at 80% 85%, rgba(181,154,99,0.15), transparent 45%)",
-          color: "#f3efe7",
+            "radial-gradient(circle at 20% 20%, rgba(80,122,154,0.28), transparent 45%), radial-gradient(circle at 80% 85%, rgba(156,190,211,0.14), transparent 45%)",
+          color: "#f5f2eb",
         }}
       >
         <div
@@ -26,7 +26,7 @@ export default function OpengraphImage() {
             display: "flex",
             fontSize: 26,
             letterSpacing: 8,
-            color: "#b59a63",
+            color: "#9cbed3",
             textTransform: "uppercase",
             marginBottom: 28,
           }}

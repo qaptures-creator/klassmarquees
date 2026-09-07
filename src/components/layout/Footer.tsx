@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-ivory/10 bg-obsidian text-ivory">
+    <footer className="border-t border-ivory/10 bg-navy text-ivory">
       <div className="mx-auto w-full max-w-[90rem] px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
@@ -20,7 +20,7 @@ export default function Footer() {
               href={siteConfig.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ivory/80 transition-colors hover:text-bronze-light"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ivory/80 transition-colors hover:text-accent-light"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" strokeWidth="1.4" />
@@ -33,7 +33,7 @@ export default function Footer() {
 
           {footerNavGroups.map((group) => (
             <nav key={group.heading} aria-label={group.heading}>
-              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 {group.heading}
               </h3>
               <ul className="mt-5 space-y-3">
@@ -52,7 +52,7 @@ export default function Footer() {
           ))}
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               Speak To Us
             </h3>
             <ul className="mt-5 space-y-3">

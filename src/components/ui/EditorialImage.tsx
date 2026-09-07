@@ -48,7 +48,7 @@ export default function EditorialImage({
     <div
       className={cn(
         fill ? "absolute inset-0" : "relative h-full w-full",
-        "overflow-hidden bg-obsidian-2",
+        "overflow-hidden bg-navy-deep",
         className,
       )}
     >

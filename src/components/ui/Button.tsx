@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "onDark" | "outlineDark" | "outlineLight";
+type ButtonVariant = "primary" | "outlineLight";
 
 interface ButtonProps {
   href: string;
@@ -15,10 +15,8 @@ interface ButtonProps {
 }
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-bronze text-obsidian hover:bg-bronze-light",
-  onDark: "bg-ivory text-obsidian hover:bg-bronze-light",
-  outlineDark: "border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-ivory",
-  outlineLight: "border border-ivory/40 text-ivory hover:border-ivory hover:bg-ivory hover:text-obsidian",
+  primary: "bg-accent-deep text-ivory hover:bg-accent",
+  outlineLight: "border border-ivory/35 text-ivory hover:border-ivory hover:bg-ivory hover:text-navy",
 };
 
 export default function Button({

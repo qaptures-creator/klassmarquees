@@ -8,7 +8,7 @@ export default function StickyMobileCTA() {
   if (pathname === "/contact") return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ivory/10 bg-obsidian/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ivory/10 bg-navy/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-md lg:hidden">
       <Button href="/contact" showArrow={false} className="w-full">
         Plan Your Event
       </Button>

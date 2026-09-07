@@ -30,7 +30,7 @@ function Tile({
         className="h-full w-full"
         imgClassName={`transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06] ${imgClassName ?? ""}`}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-obsidian/0 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/0 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
       <span className="absolute bottom-5 left-5 text-xs font-semibold uppercase tracking-[0.18em] text-ivory">
         {image.caption}
       </span>
@@ -42,7 +42,7 @@ export default function Showcase() {
   if (!big || !tall || !small1 || !small2) return null;
 
   return (
-    <section className="bg-ivory py-24 sm:py-28 lg:py-32">
+    <section className="bg-elevated py-24 sm:py-28 lg:py-32">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading
@@ -52,7 +52,7 @@ export default function Showcase() {
             className="mb-0"
           />
           <Reveal delay={0.2}>
-            <Button href="/gallery" variant="outlineDark">
+            <Button href="/gallery" variant="outlineLight">
               View Full Gallery
             </Button>
           </Reveal>

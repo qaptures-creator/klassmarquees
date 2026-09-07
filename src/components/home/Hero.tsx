@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { mediaExists } from "@/lib/media";
 import EditorialImage from "@/components/ui/EditorialImage";
+import ParallaxWrapper from "@/components/ui/ParallaxWrapper";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
@@ -13,36 +14,50 @@ export default async function Hero() {
   const posterSrc = "/images/hero/hero-poster.jpg";
 
   return (
-    <section className="relative flex h-[100svh] min-h-[42rem] w-full items-end overflow-hidden bg-obsidian text-ivory">
-      <div className="absolute inset-0 motion-safe:animate-[heroZoom_25s_ease-out_forwards]">
-        {hasVideo ? (
-          <video
-            className="h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={mediaExists(posterSrc) ? posterSrc : undefined}
-          >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <EditorialImage
-            src={posterSrc}
-            alt="A candlelit luxury marquee interior, set for an evening celebration"
-            category="hero"
-            priority
-            className="h-full w-full"
-          />
-        )}
+    <section className="relative flex h-[100svh] min-h-[42rem] w-full items-end overflow-hidden bg-navy text-ivory">
+      <div className="absolute inset-0">
+        <ParallaxWrapper range={7}>
+          <div className="h-full w-full motion-safe:animate-[heroZoom_25s_ease-out_forwards]">
+            {hasVideo ? (
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={mediaExists(posterSrc) ? posterSrc : undefined}
+              >
+                <source src="/videos/hero.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <EditorialImage
+                src={posterSrc}
+                alt="A candlelit luxury marquee interior, set for an evening celebration"
+                category="hero"
+                priority
+                className="h-full w-full"
+              />
+            )}
+          </div>
+        </ParallaxWrapper>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/35 to-obsidian/5" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-obsidian/60 via-transparent to-transparent" />
+      {/* Slow drifting light bloom — ambient "light shift" over the image */}
+      <div
+        className="pointer-events-none absolute -inset-y-1/4 -inset-x-1/4 opacity-45 mix-blend-screen motion-safe:animate-[heroLightShift_22s_ease-in-out_infinite]"
+        style={{
+          background:
+            "radial-gradient(ellipse 40% 35% at 50% 50%, rgba(156,190,211,0.5), transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/35 to-navy/5" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/60 via-transparent to-transparent" />
 
       <Container className="relative z-10 pb-24 pt-40 sm:pb-28">
         <Reveal variant="mask">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-bronze-light">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent-light">
             Luxury Marquee Hire · {siteConfig.location.city}, {siteConfig.location.region}
           </p>
         </Reveal>
@@ -50,7 +65,7 @@ export default async function Hero() {
           <h1 className="mt-6 max-w-4xl text-hero font-serif font-medium text-ivory">
             Extraordinary spaces.
             <br />
-            <span className="italic text-bronze-light">Unforgettable</span> occasions.
+            <span className="italic text-accent-light">Unforgettable</span> occasions.
           </h1>
         </Reveal>
         <Reveal delay={0.55}>

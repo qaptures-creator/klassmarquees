@@ -5,9 +5,9 @@ import type { ServicePageContent } from "@/types";
 
 export default function ServiceOptionsList({ content }: { content: ServicePageContent }) {
   return (
-    <section className="bg-obsidian py-24 text-ivory sm:py-28 lg:py-32">
+    <section className="bg-navy py-24 text-ivory sm:py-28 lg:py-32">
       <Container>
-        <SectionHeading eyebrow="What's Included" heading="Designed and built as one space." tone="light" />
+        <SectionHeading eyebrow="What's Included" heading="Designed and built as one space." />
         <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-0 border-t border-ivory/12 sm:grid-cols-2">
           {content.options.map((option, i) => (
             <Reveal key={option.title} delay={(i % 2) * 0.08}>

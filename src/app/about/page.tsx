@@ -36,7 +36,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative flex h-[70vh] min-h-[28rem] items-end overflow-hidden bg-obsidian text-ivory">
+      <section className="relative flex h-[70vh] min-h-[28rem] items-end overflow-hidden bg-navy text-ivory">
         <EditorialImage
           src="/images/about/about-hero.jpg"
           alt="Klass Marquees team finishing the interior of a marquee ahead of an event"
@@ -44,10 +44,10 @@ export default function AboutPage() {
           priority
           fill
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-navy/10" />
         <Container className="relative z-10 pb-20 pt-40">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-bronze-light">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent-light">
               About Klass Marquees
             </p>
           </Reveal>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-ivory py-24 sm:py-28 lg:py-32">
+      <section className="bg-navy-deep py-24 sm:py-28 lg:py-32">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
@@ -67,14 +67,14 @@ export default function AboutPage() {
                 <Eyebrow>Our Approach</Eyebrow>
               </Reveal>
               <Reveal delay={0.08}>
-                <h2 className="mt-5 text-h1 font-serif font-medium text-ink text-balance">
+                <h2 className="mt-5 text-h1 font-serif font-medium text-ivory text-balance">
                   Detail, not decoration.
                 </h2>
               </Reveal>
             </div>
             <div className="space-y-6 lg:col-span-7 lg:col-start-6">
               <Reveal delay={0.1}>
-                <p className="text-lead text-ink/70 text-pretty">
+                <p className="text-lead text-ivory/70 text-pretty">
                   Klass Marquees designs and builds bespoke marquees for
                   weddings, private celebrations and corporate events across
                   {" "}{siteConfig.location.city}, {siteConfig.location.region},
@@ -85,7 +85,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={0.18}>
-                <p className="text-lead text-ink/70 text-pretty">
+                <p className="text-lead text-ivory/70 text-pretty">
                   Because our own team carries a project from consultation
                   through to strike, design decisions stay grounded in what is
                   practical to build — and what is agreed at the first
@@ -97,9 +97,9 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-obsidian py-24 text-ivory sm:py-28 lg:py-32">
+      <section className="bg-navy py-24 text-ivory sm:py-28 lg:py-32">
         <Container>
-          <SectionHeading eyebrow="What Guides Our Work" heading="Four principles, on every build." tone="light" />
+          <SectionHeading eyebrow="What Guides Our Work" heading="Four principles, on every build." />
           <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-0 border-t border-ivory/12 sm:grid-cols-2">
             {values.map((value, i) => (
               <Reveal key={value.title} delay={(i % 2) * 0.08}>
@@ -113,18 +113,18 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-ivory py-24 sm:py-28 lg:py-32">
+      <section className="bg-elevated py-24 sm:py-28 lg:py-32">
         <Container className="max-w-3xl text-center">
           <Reveal>
             <Eyebrow className="justify-center">The People Behind It</Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mt-5 text-h1 font-serif font-medium text-ink text-balance">
+            <h2 className="mt-5 text-h1 font-serif font-medium text-ivory text-balance">
               A dedicated team, on every build.
             </h2>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mx-auto mt-6 max-w-xl text-lead text-ink/70 text-pretty">
+            <p className="mx-auto mt-6 max-w-xl text-lead text-ivory/70 text-pretty">
               From design consultation to the final strike, your event is
               handled by our own in-house team. You can see more of the
               people and process behind each build on our Instagram.
@@ -132,7 +132,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.24}>
             <div className="mt-8 flex justify-center">
-              <Button href={siteConfig.instagram} external variant="outlineDark">
+              <Button href={siteConfig.instagram} external variant="outlineLight">
                 See {siteConfig.instagramHandle} on Instagram
               </Button>
             </div>

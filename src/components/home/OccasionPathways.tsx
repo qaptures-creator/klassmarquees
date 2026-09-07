@@ -13,12 +13,11 @@ const grow: Record<string, string> = {
 
 export default function OccasionPathways() {
   return (
-    <section className="bg-obsidian py-24 text-ivory sm:py-28 lg:py-32">
+    <section className="bg-navy py-24 text-ivory sm:py-28 lg:py-32">
       <Container>
         <SectionHeading
           eyebrow="Occasions"
           heading="Every occasion, designed on its own terms."
-          tone="light"
         />
         <div className="mt-14 flex flex-col gap-5 lg:flex-row lg:gap-6">
           {servicePages.map((service, i) => (
@@ -34,15 +33,15 @@ export default function OccasionPathways() {
                   fill
                   imgClassName="transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/25 to-obsidian/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/25 to-navy/10" />
                 <div className="relative z-10 p-7 sm:p-9">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-bronze-light">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-light">
                     {service.eyebrow}
                   </p>
                   <h3 className="mt-3 max-w-xs font-serif text-h2 font-medium text-ivory text-balance">
                     {service.navLabel}
                   </h3>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-ivory/85 transition-colors group-hover:text-bronze-light">
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.1em] text-ivory/85 transition-colors group-hover:text-accent-light">
                     Explore
                     <svg
                       aria-hidden="true"

@@ -20,12 +20,12 @@ export default function ServiceGalleryPreview({
   if (images.length === 0) return null;
 
   return (
-    <section className="bg-ivory py-24 sm:py-28 lg:py-32">
+    <section className="bg-elevated py-24 sm:py-28 lg:py-32">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading eyebrow="From The Gallery" heading={heading} className="mb-0" />
           <Reveal delay={0.2}>
-            <Button href={`/gallery?category=${category}`} variant="outlineDark">
+            <Button href={`/gallery?category=${category}`} variant="outlineLight">
               View Gallery
             </Button>
           </Reveal>
@@ -44,7 +44,7 @@ export default function ServiceGalleryPreview({
                   className="h-full w-full"
                   imgClassName="transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </Link>
             </Reveal>
           ))}

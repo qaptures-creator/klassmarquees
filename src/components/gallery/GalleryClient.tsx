@@ -53,8 +53,8 @@ export default function GalleryClient({
               className={cn(
                 "min-h-[44px] rounded-full border px-5 py-2 text-sm font-medium uppercase tracking-[0.06em] transition-colors duration-300",
                 active
-                  ? "border-bronze bg-bronze text-obsidian"
-                  : "border-ink/20 text-ink/70 hover:border-ink hover:text-ink",
+                  ? "border-accent-deep bg-accent-deep text-ivory"
+                  : "border-ivory/20 text-ivory/70 hover:border-ivory hover:text-ivory",
               )}
             >
               {f.label}
@@ -64,7 +64,7 @@ export default function GalleryClient({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-16 text-center text-ink/60">No images in this category yet.</p>
+        <p className="mt-16 text-center text-ivory/60">No images in this category yet.</p>
       ) : (
         <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3 lg:gap-6">
           {filtered.map((image, i) => (
@@ -88,7 +88,7 @@ export default function GalleryClient({
                   imgClassName="transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
                   priority={i < 3}
                 />
-                <span className="absolute inset-0 bg-gradient-to-t from-obsidian/55 via-transparent to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
+                <span className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
                 <span className="absolute bottom-3 left-3 text-xs font-medium text-ivory opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   {image.caption}
                 </span>

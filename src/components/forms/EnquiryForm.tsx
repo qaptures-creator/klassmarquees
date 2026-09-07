@@ -63,8 +63,8 @@ function validate(form: FormState): Errors {
 }
 
 const inputClasses =
-  "w-full min-h-[44px] border-0 border-b border-ink/25 bg-transparent px-0 py-3 text-base text-ink placeholder:text-ink/35 transition-colors focus:border-bronze focus:outline-none";
-const labelClasses = "text-sm font-semibold text-ink/80";
+  "w-full min-h-[44px] border-0 border-b border-ivory/25 bg-transparent px-0 py-3 text-base text-ivory placeholder:text-ivory/35 transition-colors focus:border-accent focus:outline-none";
+const labelClasses = "text-sm font-semibold text-ivory/80";
 
 export default function EnquiryForm() {
   const [form, setForm] = useState<FormState>(initialState);
@@ -112,15 +112,15 @@ export default function EnquiryForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-bronze/30 bg-ivory-2/60 px-8 py-14 text-center sm:px-14">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-bronze">Enquiry Received</p>
-        <h3 className="mt-5 font-serif text-h2 font-medium text-ink text-balance">
+      <div className="border border-accent/30 bg-elevated/70 px-8 py-14 text-center sm:px-14">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Enquiry Received</p>
+        <h3 className="mt-5 font-serif text-h2 font-medium text-ivory text-balance">
           Thank you — we&rsquo;ve received your enquiry.
         </h3>
-        <p className="mx-auto mt-5 max-w-md text-ink/70">
+        <p className="mx-auto mt-5 max-w-md text-ivory/70">
           A member of our team will be in touch personally. If your event is
           time-sensitive, please call us directly on{" "}
-          <a href={`tel:${primaryPhone.tel}`} className="font-semibold text-bronze hover:underline">
+          <a href={`tel:${primaryPhone.tel}`} className="font-semibold text-accent hover:underline">
             {primaryPhone.display}
           </a>
           .
@@ -131,7 +131,7 @@ export default function EnquiryForm() {
             setForm(initialState);
             setStatus("idle");
           }}
-          className="mt-8 min-h-[44px] text-sm font-semibold uppercase tracking-[0.12em] text-ink/70 underline decoration-ink/30 underline-offset-4 transition-colors hover:text-bronze"
+          className="mt-8 min-h-[44px] text-sm font-semibold uppercase tracking-[0.12em] text-ivory/70 underline decoration-ivory/30 underline-offset-4 transition-colors hover:text-accent"
         >
           Send another enquiry
         </button>
@@ -146,7 +146,7 @@ export default function EnquiryForm() {
       </h2>
 
       {status === "error" && (
-        <div role="alert" className="border border-bronze/40 bg-bronze/10 px-5 py-4 text-sm text-ink">
+        <div role="alert" className="border border-accent/40 bg-accent/10 px-5 py-4 text-sm text-ivory">
           Something went wrong sending your enquiry — please try again, or call us
           directly on{" "}
           <a href={`tel:${primaryPhone.tel}`} className="font-semibold underline">
@@ -219,7 +219,7 @@ export default function EnquiryForm() {
         <Field id="eventType" label="Event type" required error={errors.eventType}>
           <select
             id="eventType"
-            className={cn(inputClasses, !form.eventType && "text-ink/35")}
+            className={cn(inputClasses, !form.eventType && "text-ivory/35")}
             value={form.eventType}
             onChange={(e) => update("eventType", e.target.value)}
             aria-invalid={!!errors.eventType}
@@ -257,7 +257,7 @@ export default function EnquiryForm() {
         <Field id="guestCount" label="Estimated guest count">
           <select
             id="guestCount"
-            className={cn(inputClasses, !form.guestCount && "text-ink/35")}
+            className={cn(inputClasses, !form.guestCount && "text-ivory/35")}
             value={form.guestCount}
             onChange={(e) => update("guestCount", e.target.value)}
           >
@@ -274,14 +274,14 @@ export default function EnquiryForm() {
           <legend className={labelClasses}>Preferred contact method</legend>
           <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
             {CONTACT_METHODS.map((method) => (
-              <label key={method} className="flex min-h-[44px] items-center gap-2 text-sm text-ink/80">
+              <label key={method} className="flex min-h-[44px] items-center gap-2 text-sm text-ivory/80">
                 <input
                   type="radio"
                   name="preferredContact"
                   value={method}
                   checked={form.preferredContact === method}
                   onChange={() => update("preferredContact", method)}
-                  className="h-4 w-4 accent-bronze"
+                  className="h-4 w-4 accent-accent"
                 />
                 {method}
               </label>
@@ -294,12 +294,12 @@ export default function EnquiryForm() {
         <legend className={labelClasses}>Services required</legend>
         <div className="mt-4 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
           {SERVICES.map((service) => (
-            <label key={service} className="flex min-h-[44px] items-center gap-3 text-sm text-ink/80">
+            <label key={service} className="flex min-h-[44px] items-center gap-3 text-sm text-ivory/80">
               <input
                 type="checkbox"
                 checked={form.services.includes(service)}
                 onChange={() => toggleService(service)}
-                className="h-4 w-4 accent-bronze"
+                className="h-4 w-4 accent-accent"
               />
               {service}
             </label>
@@ -319,26 +319,26 @@ export default function EnquiryForm() {
       </Field>
 
       <fieldset>
-        <label className="flex items-start gap-3 text-sm text-ink/75">
+        <label className="flex items-start gap-3 text-sm text-ivory/75">
           <input
             type="checkbox"
             checked={form.consent}
             onChange={(e) => update("consent", e.target.checked)}
             aria-invalid={!!errors.consent}
             aria-describedby={errors.consent ? "consent-error" : undefined}
-            className="mt-0.5 h-4 w-4 shrink-0 accent-bronze"
+            className="mt-0.5 h-4 w-4 shrink-0 accent-accent"
           />
           <span>
             I&rsquo;m happy for Klass Marquees to contact me about my enquiry, in
             line with the{" "}
-            <a href="/privacy" className="underline hover:text-bronze">
+            <a href="/privacy" className="underline hover:text-accent">
               privacy policy
             </a>
             .
           </span>
         </label>
         {errors.consent && (
-          <p id="consent-error" className="mt-2 text-sm text-bronze">
+          <p id="consent-error" className="mt-2 text-sm text-accent">
             {errors.consent}
           </p>
         )}
@@ -347,7 +347,7 @@ export default function EnquiryForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex min-h-[44px] w-full items-center justify-center bg-bronze px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-obsidian transition-colors duration-300 hover:bg-bronze-light disabled:cursor-wait disabled:opacity-70 sm:w-auto"
+        className="inline-flex min-h-[44px] w-full items-center justify-center bg-accent-deep px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-ivory transition-colors duration-300 hover:bg-accent disabled:cursor-wait disabled:opacity-70 sm:w-auto"
       >
         {status === "loading" ? "Sending…" : "Send Enquiry"}
       </button>
@@ -374,11 +374,11 @@ function Field({
     <div ref={firstErrorRef}>
       <label htmlFor={id} className={labelClasses}>
         {label}
-        {required && <span className="ml-1 text-bronze">*</span>}
+        {required && <span className="ml-1 text-accent">*</span>}
       </label>
       <div className="mt-2">{children}</div>
       {error && (
-        <p id={`${id}-error`} className="mt-2 text-sm text-bronze">
+        <p id={`${id}-error`} className="mt-2 text-sm text-accent">
           {error}
         </p>
       )}

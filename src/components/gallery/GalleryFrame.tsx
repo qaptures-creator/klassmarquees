@@ -38,7 +38,7 @@ export default function GalleryFrame({
     <span
       className={cn(
         fill ? "absolute inset-0" : "relative block h-full w-full",
-        "overflow-hidden bg-obsidian-2",
+        "overflow-hidden bg-navy-deep",
         className,
       )}
     >

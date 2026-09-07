@@ -47,7 +47,7 @@ export default function Lightbox({
           aria-modal="true"
           aria-label={`Image viewer: ${current.caption}`}
           tabIndex={-1}
-          className="fixed inset-0 z-[70] flex flex-col bg-obsidian/97 outline-none backdrop-blur-sm"
+          className="fixed inset-0 z-[70] flex flex-col bg-navy/97 outline-none backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -62,7 +62,7 @@ export default function Lightbox({
               type="button"
               onClick={onClose}
               aria-label="Close image viewer"
-              className="flex h-11 w-11 items-center justify-center text-ivory transition-colors hover:text-bronze-light"
+              className="flex h-11 w-11 items-center justify-center text-ivory transition-colors hover:text-accent-light"
             >
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
                 <path
@@ -83,7 +83,7 @@ export default function Lightbox({
                 onNavigate((index! - 1 + images.length) % images.length);
               }}
               aria-label="Previous image"
-              className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-ivory transition-colors hover:text-bronze-light sm:left-4"
+              className="absolute left-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-ivory transition-colors hover:text-accent-light sm:left-4"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M12 3L5 10L12 17" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -116,7 +116,7 @@ export default function Lightbox({
                 onNavigate((index! + 1) % images.length);
               }}
               aria-label="Next image"
-              className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-ivory transition-colors hover:text-bronze-light sm:right-4"
+              className="absolute right-1 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-ivory transition-colors hover:text-accent-light sm:right-4"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path d="M8 3L15 10L8 17" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />

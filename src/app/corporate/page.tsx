@@ -4,7 +4,7 @@ import ServiceIntro from "@/components/service-page/ServiceIntro";
 import ServiceOptionsList from "@/components/service-page/ServiceOptionsList";
 import ServiceGalleryPreview from "@/components/service-page/ServiceGalleryPreview";
 import ServicePlanning from "@/components/service-page/ServicePlanning";
-import ImageBreak from "@/components/home/ImageBreak";
+import ServiceStickyStory from "@/components/service-page/ServiceStickyStory";
 import EnquiryCTA from "@/components/home/EnquiryCTA";
 import FAQSection from "@/components/shared/FAQSection";
 import { getServicePage } from "@/config/services";
@@ -24,11 +24,7 @@ export default function CorporatePage() {
       <ServiceOptionsList content={content} />
       <ServicePlanning content={content} />
       <ServiceGalleryPreview category="corporate" heading="Recent corporate builds." />
-      <ImageBreak
-        quote="A space that performs as precisely as your event does."
-        src="/images/services/corporate-break.jpg"
-        category="corporate"
-      />
+      <ServiceStickyStory content={content} />
       <FAQSection faqs={content.faqs} eyebrow="Corporate FAQs" heading="Common questions about corporate events." />
       <EnquiryCTA heading={content.ctaHeadline} />
     </>

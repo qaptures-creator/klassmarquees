@@ -5,6 +5,8 @@ import { siteConfig, primaryPhone } from "@/config/site";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyMobileCTA from "@/components/layout/StickyMobileCTA";
+import AtmosphericBackground from "@/components/layout/AtmosphericBackground";
+import PageTransition from "@/components/layout/PageTransition";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b0b0a",
+  themeColor: "#04111f",
   width: "device-width",
   initialScale: 1,
 };
@@ -84,17 +86,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
-      <body className="flex min-h-screen flex-col bg-ivory font-sans text-ink antialiased">
+      <body className="flex min-h-screen flex-col bg-navy font-sans text-ivory antialiased">
         <a
           href="#main-content"
-          className="sr-only-focusable fixed left-4 top-4 z-[100] rounded bg-obsidian px-4 py-2 text-sm text-ivory"
+          className="sr-only-focusable fixed left-4 top-4 z-[100] rounded bg-navy px-4 py-2 text-sm text-ivory"
         >
           Skip to content
         </a>
-        <div className="grain-overlay" aria-hidden="true" />
+        <AtmosphericBackground />
         <Header />
         <main id="main-content" className="flex-1">
-          {children}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
         <StickyMobileCTA />

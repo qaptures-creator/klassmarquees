@@ -9,7 +9,7 @@ interface RevealProps {
   y?: number;
   duration?: number;
   className?: string;
-  variant?: "rise" | "mask";
+  variant?: "rise" | "mask" | "scale";
   once?: boolean;
 }
 
@@ -36,13 +36,21 @@ export default function Reveal({
     visible: { clipPath: "inset(0 0 0% 0)", transition: { duration: d, delay, ease } },
   };
 
+  const scaleVariants: Variants = {
+    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 1.08 },
+    visible: { opacity: 1, scale: 1, transition: { duration: shouldReduceMotion ? 0.01 : 1.3, delay, ease } },
+  };
+
+  const variants =
+    variant === "mask" ? maskVariants : variant === "scale" ? scaleVariants : riseVariants;
+
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
       viewport={{ once, margin: "-10% 0px -10% 0px" }}
-      variants={variant === "mask" ? maskVariants : riseVariants}
+      variants={variants}
     >
       {children}
     </motion.div>
