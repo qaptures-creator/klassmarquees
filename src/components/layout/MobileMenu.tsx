@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { navLinks, primaryPhone, siteConfig } from "@/config/site";
@@ -15,6 +16,15 @@ export default function MobileMenu({
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const shouldReduceMotion = useReducedMotion();
+  // Portalled to <body> rather than rendered inside <header> (which is
+  // itself position:fixed with its own z-index and so forms a stacking
+  // context) — nesting one fixed, full-viewport overlay inside another
+  // is a well-known source of stacking/compositing bugs across browsers.
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (open) closeRef.current?.focus();
@@ -34,7 +44,9 @@ export default function MobileMenu({
     };
   }, [open, onClose]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -42,7 +54,7 @@ export default function MobileMenu({
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
-          className="fixed inset-0 z-40 flex flex-col bg-obsidian text-ivory lg:hidden"
+          className="fixed inset-0 z-[55] flex flex-col bg-obsidian text-ivory lg:hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -104,6 +116,7 @@ export default function MobileMenu({
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }
