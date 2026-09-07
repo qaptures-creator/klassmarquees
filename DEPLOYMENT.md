@@ -7,11 +7,11 @@
 | Workspace | Mohamed zak's Projects (personal workspace) — see note below |
 | Project | `Prmote` (existing shared project; other services: `the-han-cafe-website`, `slough-automotives-website`, `Muscle-Massacre-crm`, `Postgres`, `PRMOTE`) |
 | Service | `klassmarquees-website` |
-| Production URL | _pending — filled in once the domain is generated_ |
+| Production URL | https://klassmarquees-website-production.up.railway.app |
 | GitHub repository | `qaptures-creator/klassmarquees` |
 | Deploy branch | `claude/klassmarquees-build-deploy-1w5zs6` |
-| Final commit SHA | _pending — filled in after the last push_ |
-| Build/deploy status | _pending_ |
+| Final commit SHA | `d85ebaa2159e95f2ab7e497b05503e2de9bc6739` |
+| Build/deploy status | ✅ SUCCESS — deployment `e8f2e4d1`, live and healthy (see Build & deploy status below) |
 
 ### Note on the "PRMOTE workspace" instruction
 
@@ -50,7 +50,7 @@ transfer the `klassmarquees-website` service once it's accessible.
 
 | Variable | Value |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | _pending — set once the domain is generated_ |
+| `NEXT_PUBLIC_SITE_URL` | `https://klassmarquees-website-production.up.railway.app` |
 
 `RESEND_API_KEY`, `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` are **not**
 set — the enquiry form works end-to-end and logs submissions server-side,
@@ -83,6 +83,48 @@ sizes and subjects. In short:
 
 ## Build & deploy status
 
-_This section is completed at the end of the deployment — see the final
-message in this session for the live confirmation, or re-check
-`mcp__Railway__list-deployments` / `get-logs` for the current state._
+**✅ Deployed and verified healthy** (as of this session).
+
+- Deployment `e8f2e4d1-e04d-4917-bb32-b53c83eda06a`, commit `d85ebaa`,
+  reached **SUCCESS** via Railway's own deployment lifecycle (build →
+  healthcheck on `GET /api/health` → promote to live).
+- `mcp__Railway__environment-status` confirms the service `state: "online"`,
+  1/1 replicas running, 0 crashed, 0 issues, 0 recent failures.
+- Builder: Railpack (`buildEnvironment: V3`), auto-detected as a Next.js
+  app — no custom build/start commands were needed. `next start` binds to
+  `0.0.0.0` and reads Railway's `PORT` automatically.
+- All other services in the shared `Prmote` project (`the-han-cafe-website`,
+  `slough-automotives-website`, `Muscle-Massacre-crm`, `Postgres`,
+  `PRMOTE`) were re-checked after this deployment and remain online and
+  untouched.
+- Every push to `claude/klassmarquees-build-deploy-1w5zs6` triggers a
+  fresh Railway build of that commit (confirmed across three consecutive
+  pushes in this session). If a push ever doesn't appear to trigger a
+  build within a minute or two, re-run `connect-service-source` with the
+  same repo/branch on this service — it reliably forces a fresh deploy of
+  the latest commit without creating a new service.
+
+### External verification limitation (read before assuming the site is down)
+
+This sandboxed session's own outbound network access is restricted to an
+allowlist that does **not** include `*.up.railway.app` — `curl`,
+`WebFetch`, and even a locally-launched Playwright/Chromium browser were
+all independently blocked (`CONNECT tunnel failed, response 403`) when
+this session tried to load the live URL directly, regardless of tool.
+This is a policy restriction of *this Claude Code session's container*,
+not a symptom of the deployment being broken — Railway's own
+infrastructure (deployment status, replica health, logs above) confirms
+the app is live and serving. **Open the production URL from a normal
+browser to do the final visual confirmation** — everything on this end
+points to it working correctly, but this session could not load the page
+itself to take a screenshot of the live site as a last check.
+
+### Local QA before deploy (for context)
+
+Before pushing, the full site was exercised locally against a production
+build (`next build && next start`) using Playwright at 375/390/768/1024/
+1440px: every page, the header's transparent→solid scroll transition, the
+mobile menu (portal fix verified), the gallery lightbox with keyboard
+navigation, gallery filtering, contact form validation states, and
+reduced-motion mode. One real bug was found and fixed this way (see commit
+`019e27a`) before anything shipped.
