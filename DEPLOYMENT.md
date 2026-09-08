@@ -10,8 +10,8 @@
 | Production URL | https://klassmarquees-website-production.up.railway.app |
 | GitHub repository | `qaptures-creator/klassmarquees` |
 | Deploy branch | `claude/klassmarquees-build-deploy-1w5zs6` |
-| Final commit SHA | `2cbfa1dac4c22c93692068b6b90feb48b6da88d3` |
-| Build/deploy status | ✅ SUCCESS — deployment `fd8a5f85`, live and healthy (see Build & deploy status below) |
+| Final commit SHA | `0608bde4d3e2bca8d2eb47c82f712cb89d021639` |
+| Build/deploy status | ✅ SUCCESS (see Build & deploy status below) |
 
 ### Note on the "PRMOTE workspace" instruction
 
