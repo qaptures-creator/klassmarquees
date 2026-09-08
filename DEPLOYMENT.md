@@ -10,8 +10,8 @@
 | Production URL | https://klassmarquees-website-production.up.railway.app |
 | GitHub repository | `qaptures-creator/klassmarquees` |
 | Deploy branch | `claude/klassmarquees-build-deploy-1w5zs6` |
-| Final commit SHA | `d85ebaa2159e95f2ab7e497b05503e2de9bc6739` |
-| Build/deploy status | ✅ SUCCESS — deployment `e8f2e4d1`, live and healthy (see Build & deploy status below) |
+| Final commit SHA | `2cbfa1dac4c22c93692068b6b90feb48b6da88d3` |
+| Build/deploy status | ✅ SUCCESS — deployment `fd8a5f85`, live and healthy (see Build & deploy status below) |
 
 ### Note on the "PRMOTE workspace" instruction
 
@@ -81,13 +81,43 @@ sizes and subjects. In short:
 - Favicon (`src/app/icon.svg`) is a simple placeholder mark, not the real
   brand logo (not available as a file to use).
 
+## Design system (updated)
+
+The site was redesigned from its original bronze/gold/ivory palette to a
+dark, cinematic navy system:
+
+| Token | Hex | Role |
+|---|---|---|
+| `navy` | `#04111F` | Primary background |
+| `navy-deep` | `#071A2D` | Secondary dark surface (section rhythm) |
+| `elevated` | `#0B243A` | Raised panels / alternating sections |
+| `accent` | `#507A9A` | Links, eyebrows, hairlines, hover states |
+| `accent-deep` | `#3F6582` | Button fills (darker than `accent` — see below) |
+| `accent-light` | `#9CBED3` | Highlights, active nav state |
+| `ivory` | `#F5F2EB` | Primary text on dark |
+| `muted` | `#B5BEC8` | (defined, currently unused as text — reserved) |
+
+All tokens live in `src/app/globals.css` (`@theme` block). `accent-deep`
+was added after script-checking WCAG contrast ratios: plain `accent` +
+navy/ivory text sat at ~4.1:1 (just under the 4.5:1 AA threshold for
+normal-size text) on the primary button and the gallery filter's active
+state — `accent-deep` + ivory text clears 5.5:1 on both.
+
+A persistent scroll-linked background (`src/components/layout/
+AtmosphericBackground.tsx`) and a pinned-image storytelling section per
+service page (`ServiceStickyStory`) were added — see the redesign commit
+message (`git log`) for full detail on what changed and why.
+
 ## Build & deploy status
 
 **✅ Deployed and verified healthy** (as of this session).
 
-- Deployment `e8f2e4d1-e04d-4917-bb32-b53c83eda06a`, commit `d85ebaa`,
-  reached **SUCCESS** via Railway's own deployment lifecycle (build →
-  healthcheck on `GET /api/health` → promote to live).
+- Deployment `fd8a5f85-ee6d-4bd2-8560-261d72e735a4`, commit `2cbfa1d`
+  (the navy redesign), reached **SUCCESS** via Railway's own deployment
+  lifecycle (build → healthcheck on `GET /api/health` → promote to live).
+  Previous deployment `e8f2e4d1` (commit `d85ebaa`) also reached SUCCESS
+  earlier in this engagement — full history in `git log` / Railway's
+  deployment list.
 - `mcp__Railway__environment-status` confirms the service `state: "online"`,
   1/1 replicas running, 0 crashed, 0 issues, 0 recent failures.
 - Builder: Railpack (`buildEnvironment: V3`), auto-detected as a Next.js
