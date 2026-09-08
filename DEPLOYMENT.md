@@ -121,14 +121,14 @@ message (`git log`) for full detail on what changed and why.
 
 **✅ Deployed and verified healthy** (as of this session).
 
-- Deployment `fd8a5f85-ee6d-4bd2-8560-261d72e735a4`, commit `2cbfa1d`
-  (the navy redesign), reached **SUCCESS** via Railway's own deployment
-  lifecycle (build → healthcheck on `GET /api/health` → promote to live).
-  Previous deployment `e8f2e4d1` (commit `d85ebaa`) also reached SUCCESS
-  earlier in this engagement — full history in `git log` / Railway's
-  deployment list.
-- `mcp__Railway__environment-status` confirms the service `state: "online"`,
-  1/1 replicas running, 0 crashed, 0 issues, 0 recent failures.
+- Deployment `13ced024-fc44-4ba4-b064-adaa6c186beb`, commit `0608bde`
+  (real logo + event photography), reached **SUCCESS** via Railway's own
+  deployment lifecycle (build → healthcheck on `GET /api/health` →
+  promote to live), confirmed via `environment-status`: `state: "online"`,
+  1/1 replicas running, 0 crashed, 0 issues, 0 recent failures. Previous
+  deployments `fd8a5f85` (commit `2cbfa1d`, the navy redesign) and
+  `e8f2e4d1` (commit `d85ebaa`) also reached SUCCESS earlier in this
+  engagement — full history in `git log` / Railway's deployment list.
 - Builder: Railpack (`buildEnvironment: V3`), auto-detected as a Next.js
   app — no custom build/start commands were needed. `next start` binds to
   `0.0.0.0` and reads Railway's `PORT` automatically.
