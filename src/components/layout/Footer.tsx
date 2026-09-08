@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig, phoneLines, footerNavGroups } from "@/config/site";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,9 +10,7 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-[90rem] px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" className="font-serif text-2xl font-semibold tracking-[0.08em]">
-              KLASS MARQUEES
-            </Link>
+            <Logo markClassName="h-10 w-auto" textClassName="text-2xl tracking-[0.08em]" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/60">
               Bespoke luxury marquee hire for weddings, private celebrations and
               corporate events, based in {siteConfig.location.city}, {siteConfig.location.region}.

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { navLinks, primaryPhone, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 
 function subscribeNoop() {
   return () => {};
@@ -70,9 +71,7 @@ export default function MobileMenu({
           transition={{ duration: shouldReduceMotion ? 0.01 : 0.35, ease: "easeOut" }}
         >
           <div className="flex h-20 items-center justify-between px-6">
-            <span className="font-serif text-xl font-semibold tracking-[0.08em]">
-              KLASS MARQUEES
-            </span>
+            <Logo onClick={onClose} markClassName="h-8 w-auto" textClassName="text-xl tracking-[0.08em]" />
             <button
               ref={closeRef}
               type="button"

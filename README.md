@@ -68,6 +68,13 @@ else needs to change. Until then, each slot shows a tasteful abstract
 placeholder in the brand palette rather than a broken image (see
 `src/components/ui/EditorialImage.tsx` and `src/lib/media.ts`).
 
+The brand mark itself (favicon, apple touch icon, and the icon + wordmark
+lockup in the header/footer/mobile menu) is a real, committed asset rather
+than a placeholder slot — see `src/components/ui/Logo.tsx` and
+`public/images/brand/logo-mark.webp`. To swap it for an updated logo, replace
+that file (keep the transparent background) and `src/app/icon.png` /
+`src/app/apple-icon.png`.
+
 ## Connecting the enquiry form
 
 The form at `/contact` posts to `src/app/api/enquiry/route.ts`. That route
@@ -92,9 +99,10 @@ variables read on the server (Railway → your service → Variables).
 - **WhatsApp number** — not set. Add it to `site.ts` to enable the WhatsApp
   option in the mobile sticky CTA and contact page.
 - **Testimonials** — none published yet; see above.
-- **Final photography and hero video** — see `MEDIA_CHECKLIST.md`.
-- **Favicon** — `src/app/icon.svg` is a simple placeholder mark; swap for
-  the real Klass Marquees brand mark when available.
+- **Remaining photography and hero video** — the real Klass Marquees logo
+  and several real event photos are now in place; see `MEDIA_CHECKLIST.md`
+  for exactly which slots still need photography (mostly Private Events,
+  Corporate and About).
 
 See `DEPLOYMENT.md` for hosting details (Railway project, environment
 variables already set there, and current production URL).

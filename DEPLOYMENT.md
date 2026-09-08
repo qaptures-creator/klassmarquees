@@ -70,16 +70,25 @@ healthcheck path.
 ## Content or media that should be replaced later
 
 See `MEDIA_CHECKLIST.md` for the full list of expected image/video paths,
-sizes and subjects. In short:
+sizes and subjects, with a per-row status column. In short:
 
-- All photography is currently a tasteful placeholder (brand-coloured
-  gradient + mark) — no real Klass Marquees photos were available to use,
-  and none were fabricated or pulled from Instagram.
+- The real Klass Marquees logo and 4 real event photographs (supplied
+  directly by the client) are now in place: the home hero, the home
+  "image break", the Weddings page hero, and 4 gallery tiles
+  (`wedding-01`, `wedding-02`, `wedding-04`, `night-02`). Captions and alt
+  text were rewritten to accurately describe each photo.
+- The logo is used three ways: `src/app/icon.png` (favicon),
+  `src/app/apple-icon.png` (iOS home-screen icon), and
+  `public/images/brand/logo-mark.webp` — the mark with its background
+  removed, used as an icon + wordmark lockup in the header, footer and
+  mobile menu (`src/components/ui/Logo.tsx`).
+- Private Events, Corporate, About, and the remaining Gallery/Weddings
+  slots are still tasteful placeholders (brand-coloured gradient + mark)
+  — no photography was supplied for those yet, and none was fabricated or
+  pulled from Instagram.
 - Testimonials are empty by design — none were supplied, and none were
   invented.
 - Business email address and WhatsApp number are unset — not confirmed.
-- Favicon (`src/app/icon.svg`) is a simple placeholder mark, not the real
-  brand logo (not available as a file to use).
 
 ## Design system (updated)
 

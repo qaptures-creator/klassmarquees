@@ -7,8 +7,8 @@ import type { GalleryCategory } from "@/types";
 export default function ImageBreak({
   quote = "Every detail considered, so the moment feels effortless.",
   src = "/images/hero/image-break.jpg",
-  alt = "Guests gathered beneath draped lighting inside a marquee at dusk",
-  category = "night-events",
+  alt = "Mirror disco balls suspended above a floral wedding stage inside a marquee",
+  category = "weddings",
 }: {
   quote?: string;
   src?: string;

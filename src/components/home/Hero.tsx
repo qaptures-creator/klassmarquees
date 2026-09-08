@@ -32,7 +32,7 @@ export default async function Hero() {
             ) : (
               <EditorialImage
                 src={posterSrc}
-                alt="A candlelit luxury marquee interior, set for an evening celebration"
+                alt="A marquee reception with a cascading greenery installation above long banquet tables"
                 category="hero"
                 priority
                 className="h-full w-full"

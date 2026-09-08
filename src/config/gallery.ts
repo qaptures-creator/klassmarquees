@@ -11,8 +11,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "wedding-01",
     src: "/images/gallery/wedding-01.jpg",
-    alt: "Draped wedding marquee interior with chandelier and long banquet table",
-    caption: "Draped reception marquee, Berkshire",
+    alt: "Marquee reception with a cascading greenery installation above long banquet tables",
+    caption: "Hanging greenery installation",
     category: "weddings",
     orientation: "landscape",
     featured: true,
@@ -20,8 +20,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "wedding-02",
     src: "/images/gallery/wedding-02.jpg",
-    alt: "Bride and groom's first dance beneath festoon lighting in a marquee",
-    caption: "Evening reception lighting",
+    alt: "Mirror disco balls suspended above a floral wedding stage inside a marquee",
+    caption: "Disco ball installation",
     category: "weddings",
     orientation: "portrait",
   },
@@ -36,10 +36,10 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "wedding-04",
     src: "/images/gallery/wedding-04.jpg",
-    alt: "Detail of table setting with fine glassware inside a wedding marquee",
-    caption: "Tablescape detail",
+    alt: "Clear-roof marquee dressed for a South Asian wedding, with ornate mandap structures and a petal-lined aisle",
+    caption: "Ceremony & reception styling",
     category: "weddings",
-    orientation: "square",
+    orientation: "portrait",
   },
   {
     id: "private-01",
@@ -136,8 +136,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "night-02",
     src: "/images/gallery/night-02.jpg",
-    alt: "Uplighting and festoon lighting creating atmosphere at an evening event",
-    caption: "Evening lighting design",
+    alt: "Marquee interior with a lighting rig and crystal chandeliers above tables dressed with tall white florals",
+    caption: "Lighting rig & chandeliers",
     category: "night-events",
     orientation: "portrait",
   },

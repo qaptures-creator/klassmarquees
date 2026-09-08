@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, primaryPhone } from "@/config/site";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 import MobileMenu from "./MobileMenu";
 import { cn } from "@/lib/utils";
 
@@ -51,12 +52,7 @@ export default function Header() {
       )}
     >
       <div className="mx-auto flex h-[5.5rem] max-w-[90rem] items-center justify-between px-6 sm:px-8 lg:px-12">
-        <Link
-          href="/"
-          className="font-serif text-lg font-semibold tracking-[0.1em] text-ivory transition-colors duration-500 sm:text-xl"
-        >
-          KLASS MARQUEES
-        </Link>
+        <Logo priority markClassName="h-8 w-auto" textClassName="text-lg tracking-[0.1em] sm:text-xl" />
 
         <nav aria-label="Primary" className="hidden items-center gap-8 xl:flex">
           {navLinks.map((link) => (
